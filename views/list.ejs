@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./cmnhead.ejs'); %>
+    <title>スレッド一覧</title>
+  </head>
+  <body>
+    <header>
+      <h1>スレッド一覧</h1>
+    </header>
+    <nav>
+      <ul>
+        <% for (const elem of list) { %> <% const uri =
+        encodeURIComponent(elem); %>
+        <li><a href="./<%= uri %>"><%= elem %></a></li>
+        <% } %>
+      </ul>
+    </nav>
+    <hr />
+    <form method="POST">
+      <fieldset>
+        <legend>新規スレッド</legend>
+        <div>
+          <label for="thread">スレッド名</label>
+          <input type="text" id="thread" name="thread" required />
+        </div>
+        <div>
+          <label for="author">投稿者名</label>
+          <input type="text" id="author" name="author" />
+        </div>
+        <div>
+          <label for="message">投稿内容</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <hr />
+        <div class="right">
+          <button>スレッドをたてる</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

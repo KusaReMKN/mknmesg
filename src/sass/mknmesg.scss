@@ -1,0 +1,34 @@
+input#thread,
+input#author {
+  display: block;
+  width: 100%;
+  font: inherit;
+}
+
+textarea#message {
+  display: block;
+  width: 100%;
+  min-height: 5em;
+  font: inherit;
+  resize: vertical;
+}
+
+.right {
+  text-align: right;
+}
+
+.messages {
+  .message {
+    .msghead {
+      font-size: small;
+      color: var(--nc-tx-2);
+      margin-bottom: 1em;
+
+      .author {
+        font-size: large;
+        font-weight: bold;
+        color: var(--nc-tx-1);
+      }
+    }
+  }
+}

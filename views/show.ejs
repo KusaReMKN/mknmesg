@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./cmnhead.ejs'); %>
+    <title><%= thread %></title>
+  </head>
+  <body>
+    <header>
+      <h1><%= thread %></h1>
+      <div class="right"><a href="./">もどる</a></div>
+    </header>
+    <main>
+      <div class="messages">
+        <% for (const elem of messages) { const author = elem.author; const
+        datetime = elem.datetime; const message = elem.message; %>
+        <div class="message">
+          <div class="msghead">
+            <span class="author"><%= author %></span>
+            - <%= datetime %>
+          </div>
+          <div class="msgbody"><%- message %></div>
+        </div>
+        <hr />
+        <% } %>
+      </div>
+    </main>
+    <form method="POST">
+      <fieldset>
+        <legend>新規投稿</legend>
+        <div>
+          <label for="author">投稿者名</label>
+          <input type="text" id="author" name="author" />
+        </div>
+        <div>
+          <label for="message">投稿内容</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <hr />
+        <div class="right">
+          <button>投稿する</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
